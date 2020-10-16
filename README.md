@@ -2,7 +2,7 @@
 
 1. Suba o servidor:
 
-	- Rodar o arquivo server/server.js > cmd = node server.js
+	- Rodar o arquivo server/server.js > bash = node server.js
 	
 2. Abra o arquivo index.html
 
