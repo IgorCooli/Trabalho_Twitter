@@ -1,7 +1,10 @@
-var Twit = require('twit')
+const Twit = require('twit')
 const express = require('express')
+const cors = require('cors')
 
 const app = express()
+
+app.use(cors())
 
 var T = new Twit({
     consumer_key: 'U0x7oas6iLXYbYTBCTfZ41z6y',
@@ -32,7 +35,9 @@ app.get('/tweets/:string', function (req, res) {
                 location: element.user.location,
                 retweets: element.retweet_count,
                 source: element.source,
-                photo: element.user.profile_image_url
+                photo: element.user.profile_image_url,
+                userId: element.user.id_str,
+                tweetId: element.id_str
             }
 
             tweets.push(tweetObject)
